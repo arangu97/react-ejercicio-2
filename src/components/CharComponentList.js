@@ -28,9 +28,11 @@ export class CharComponentList extends React.Component {
     return (
         <Row>
           {this.state.charList.map((data, index) => {
-            return(
-              <CharComponent key={index} char={data} onClick={this.props.onclick} index={index}/>
-            )
+            if(data !== ' ') {
+              return(
+                <CharComponent key={index} char={data} onClick={this.props.onclick} index={index}/>
+              )
+            }
             })}
         </Row>
     );
